@@ -7,16 +7,43 @@
 //
 
 #import "AppDelegate.h"
+#import "BaseTabBarController.h"
+#import "HXCalculatorViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) BaseTabBarController *baseTabBar;
+@property (strong, nonatomic) HXCalculatorViewController *calculatorVc;
 
 @end
 
 @implementation AppDelegate
 
+//界面切换
+- (void)cutViewController:(BOOL)show {
+    if (show) {
+        if (!_baseTabBar) {
+            _baseTabBar = [BaseTabBarController new];
+        }
+        _baseTabBar.selectedIndex = 0;
+        self.window.rootViewController = _baseTabBar;
+    } else {
+        if (!_calculatorVc) {
+            _calculatorVc = [HXCalculatorViewController new];
+        }
+        self.window.rootViewController = _calculatorVc;
+    }
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self cutViewController:YES];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
