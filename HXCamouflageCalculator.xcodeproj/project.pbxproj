@@ -49,6 +49,8 @@
 		E4861FD81DDC2EA000C09BED /* HXSelectPhotoCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4861FCA1DDC2EA000C09BED /* HXSelectPhotoCountView.m */; };
 		E4861FDC1DDC45A300C09BED /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E4861FDB1DDC45A300C09BED /* README.md */; };
 		E4861FDE1DDC481600C09BED /* xiaoguo.gif in Resources */ = {isa = PBXBuildFile; fileRef = E4861FDD1DDC481600C09BED /* xiaoguo.gif */; };
+		E4861FE11DDD483700C09BED /* HXEditPhotoToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4861FE01DDD483700C09BED /* HXEditPhotoToolBar.m */; };
+		E4861FE41DDD485800C09BED /* HXEditPhotoToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4861FE31DDD485800C09BED /* HXEditPhotoToolBar.xib */; };
 		E4A813BE1DB4BDB9000D85E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4A813BD1DB4BDB9000D85E2 /* Images.xcassets */; };
 		E4B32CE81DAE21A400DB17DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4B32CE61DAE21A400DB17DE /* Model.xcdatamodeld */; };
 		E4B32CEB1DAE26AD00DB17DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B32CEA1DAE26AD00DB17DE /* CoreData.framework */; };
@@ -134,6 +136,9 @@
 		E4861FCA1DDC2EA000C09BED /* HXSelectPhotoCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXSelectPhotoCountView.m; sourceTree = "<group>"; };
 		E4861FDB1DDC45A300C09BED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E4861FDD1DDC481600C09BED /* xiaoguo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = xiaoguo.gif; sourceTree = "<group>"; };
+		E4861FDF1DDD483700C09BED /* HXEditPhotoToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXEditPhotoToolBar.h; sourceTree = "<group>"; };
+		E4861FE01DDD483700C09BED /* HXEditPhotoToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXEditPhotoToolBar.m; sourceTree = "<group>"; };
+		E4861FE31DDD485800C09BED /* HXEditPhotoToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HXEditPhotoToolBar.xib; sourceTree = "<group>"; };
 		E48C2A361DB08B8700FE6495 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E4A813BD1DB4BDB9000D85E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4B32CE71DAE21A400DB17DE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -365,6 +370,9 @@
 				E4861FC81DDC2EA000C09BED /* HXPictureGroupCell.xib */,
 				E4861FC91DDC2EA000C09BED /* HXSelectPhotoCountView.h */,
 				E4861FCA1DDC2EA000C09BED /* HXSelectPhotoCountView.m */,
+				E4861FDF1DDD483700C09BED /* HXEditPhotoToolBar.h */,
+				E4861FE01DDD483700C09BED /* HXEditPhotoToolBar.m */,
+				E4861FE31DDD485800C09BED /* HXEditPhotoToolBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +496,7 @@
 			files = (
 				E4861FD01DDC2EA000C09BED /* HXAlbumOtherCell.xib in Resources */,
 				E4861FCE1DDC2EA000C09BED /* HXAlbumNameCell.xib in Resources */,
+				E4861FE41DDD485800C09BED /* HXEditPhotoToolBar.xib in Resources */,
 				E4861FD21DDC2EA000C09BED /* HXNoAlbumsPointsCell.xib in Resources */,
 				E4861FDE1DDC481600C09BED /* xiaoguo.gif in Resources */,
 				E4861FD51DDC2EA000C09BED /* HXPhotoCollectionViewCell.xib in Resources */,
@@ -521,6 +530,7 @@
 				E47D13201DB4676200BA1040 /* AssetHelper.m in Sources */,
 				E403922A1DBF3FFC0063D541 /* PictureGroupEntity.m in Sources */,
 				E47D131F1DB4676200BA1040 /* UIView+Helpers.m in Sources */,
+				E4861FE11DDD483700C09BED /* HXEditPhotoToolBar.m in Sources */,
 				E47D13171DB4676200BA1040 /* BaseCollectionViewController.mm in Sources */,
 				E4861FD11DDC2EA000C09BED /* HXNoAlbumsPointsCell.m in Sources */,
 				E47D131D1DB4676200BA1040 /* NSString+Extension.m in Sources */,

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HXEditPhotoToolBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-ZH-Pcm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                    <subviews>
+                        <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-43-AXp">
+                            <rect key="frame" x="10" y="0.0" width="33" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="V4d-MR-a2T"/>
+                                <constraint firstAttribute="width" constant="33" id="li5-mF-NnI"/>
+                            </constraints>
+                            <state key="normal" image="move_select"/>
+                            <state key="disabled" image="move_defaule"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Hfg-f2-TLd"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvg-B8-3wo">
+                            <rect key="frame" x="45" y="15" width="285" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="JRO-bj-cKS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx7-oo-fKM">
+                            <rect key="frame" x="334" y="0.0" width="31" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="6Ro-7h-hUy"/>
+                                <constraint firstAttribute="width" constant="31" id="ozl-oJ-ds2"/>
+                            </constraints>
+                            <state key="normal" image="delete_select"/>
+                            <state key="disabled" image="delete_defaule"/>
+                            <connections>
+                                <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="TFd-hw-3gR"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="ed0-43-AXp" firstAttribute="centerY" secondItem="Mfy-ZH-Pcm" secondAttribute="centerY" id="49x-TK-KzN"/>
+                        <constraint firstItem="kx7-oo-fKM" firstAttribute="leading" secondItem="Tvg-B8-3wo" secondAttribute="trailing" constant="4" id="C1h-B2-tu8"/>
+                        <constraint firstAttribute="trailing" secondItem="kx7-oo-fKM" secondAttribute="trailing" constant="10" id="T0A-Z2-c51"/>
+                        <constraint firstItem="Tvg-B8-3wo" firstAttribute="leading" secondItem="ed0-43-AXp" secondAttribute="trailing" constant="2" id="Xg0-GR-J4N"/>
+                        <constraint firstItem="Tvg-B8-3wo" firstAttribute="centerY" secondItem="Mfy-ZH-Pcm" secondAttribute="centerY" id="XxO-qV-24L"/>
+                        <constraint firstItem="kx7-oo-fKM" firstAttribute="centerY" secondItem="Mfy-ZH-Pcm" secondAttribute="centerY" id="bZl-F5-KQJ"/>
+                        <constraint firstItem="ed0-43-AXp" firstAttribute="leading" secondItem="Mfy-ZH-Pcm" secondAttribute="leading" constant="10" id="buJ-wB-OhJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Mfy-ZH-Pcm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XgE-8x-hPB"/>
+                <constraint firstItem="Mfy-ZH-Pcm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bnE-lr-M9U"/>
+                <constraint firstAttribute="bottom" secondItem="Mfy-ZH-Pcm" secondAttribute="bottom" id="nrd-0Q-mX2"/>
+                <constraint firstAttribute="trailing" secondItem="Mfy-ZH-Pcm" secondAttribute="trailing" id="wq5-lQ-sBe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="deleteButton" destination="kx7-oo-fKM" id="R9G-se-PK1"/>
+                <outlet property="moveButton" destination="ed0-43-AXp" id="EQa-i3-5Jn"/>
+                <outlet property="pointsLabel" destination="Tvg-B8-3wo" id="8Gw-vx-9fF"/>
+            </connections>
+            <point key="canvasLocation" x="42.5" y="-398"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="delete_defaule" width="19" height="25"/>
+        <image name="delete_select" width="19" height="25"/>
+        <image name="move_defaule" width="21" height="18"/>
+        <image name="move_select" width="21" height="18"/>
+    </resources>
+</document>

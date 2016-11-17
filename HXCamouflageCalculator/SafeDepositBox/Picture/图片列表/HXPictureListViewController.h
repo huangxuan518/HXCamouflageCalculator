@@ -14,7 +14,4 @@
 @property (nonatomic,strong) PictureGroupEntity *pictureGroupEntity;
 @property (nonatomic,copy) void (^completion)(HXPictureListViewController *vc,BOOL isRefresh);
 
-//添加照片完成
-- (void)addPhotoCompletion:(NSArray *)ary;
-
 @end

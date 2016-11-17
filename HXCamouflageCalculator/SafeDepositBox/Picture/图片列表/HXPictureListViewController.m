@@ -13,6 +13,8 @@
 #import "HXPhotoCollectionViewCell.h"
 #import "HXNoAlbumsPointsCell.h"
 
+#import "HXEditPhotoToolBar.h"
+
 #import "BaseNavigationController.h"
 
 //coreData
@@ -22,6 +24,8 @@
 @interface HXPictureListViewController () <UIActionSheetDelegate>
 
 @property (nonatomic,strong) NSArray *cellDataSource;//cell相关data
+@property (nonatomic,strong) UIButton *rightBarButton;
+@property (nonatomic,strong) HXEditPhotoToolBar *toolBar; //底部bar
 
 @end
 
@@ -32,7 +36,8 @@
     // Do any additional setup after loading the view.
     self.title = _pictureGroupEntity.name;
     
-    [self setRightItemWithIcon:[UIImage imageNamed:@"add_photo"] selector:@selector(showAddPhotosActionSheet)];
+    UIBarButtonItem *item = [self ittemRightItemWithIcon:[UIImage imageNamed:@"add_photo"] title:nil selector:@selector(showAddPhotosActionSheet)];
+    self.navigationItem.rightBarButtonItem = item;
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"HXPhotoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"HXPhotoCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"HXPictureGroupCell" bundle:nil] forCellWithReuseIdentifier:@"HXPictureGroupCell"];
@@ -121,15 +126,22 @@
 //UICollectionView被选中时调用的方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    [_toolBar setSelectPictureCount:1 delegate:self];
 }
 
 //显示添加照片弹层
 - (void)showAddPhotosActionSheet {
-    UIActionSheet *a = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Close" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library",@"Camera", nil];
-    [a showInView:self.navigationController.view];
+    if (self.dataAry.count > 0) {
+        [self.view addSubview:self.toolBar];
+    } else {
+        UIActionSheet *a = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Close" destructiveButtonTitle:nil otherButtonTitles:@"Photo Library",@"Camera", nil];
+        [a showInView:self.navigationController.view];
+    }
 }
 
 #pragma mark - UIActionSheetDelegate
+
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == actionSheet.cancelButtonIndex) {
         return;
@@ -148,6 +160,12 @@
         default:
             break;
     }
+}
+
+#pragma mark - HXEditPhotoToolBarDelegate 底部工具条代理事件
+
+- (void)editPhotoCountView:(HXEditPhotoToolBar *)editPhotoCountView buttonAction:(UIButton *)sender {
+    
 }
 
 #pragma mark - Go to
@@ -179,6 +197,14 @@
     NSArray *ary = [kCoreDataManager selectAlbumCategoryPictureListWithGroupId:_pictureGroupEntity.groupId];
     self.dataAry = [NSMutableArray arrayWithArray:ary];
     [self refreshData];
+    
+    UIBarButtonItem *item;
+    if (self.dataAry.count > 0) {
+        item = [self ittemRightItemWithIcon:nil title:@"Edit" selector:@selector(showAddPhotosActionSheet)];
+    } else {
+        item = [self ittemRightItemWithIcon:[UIImage imageNamed:@"add_photo"] title:nil selector:@selector(showAddPhotosActionSheet)];
+    }
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)backAction:(UIButton *)sender {
@@ -186,6 +212,58 @@
         _completion(self,YES);
     }
     [super backAction:sender];
+}
+
+- (UIBarButtonItem *)ittemRightItemWithIcon:(UIImage *)icon title:(NSString *)title selector:(SEL)selector {
+    UIBarButtonItem *item;
+    if (!icon && title.length == 0) {
+        item = [[UIBarButtonItem new] initWithCustomView:[UIView new]];
+        return item;
+    }
+    
+    if (!_rightBarButton) {
+        _rightBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _rightBarButton.backgroundColor = [UIColor clearColor];
+        _rightBarButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        _rightBarButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+        [_rightBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_rightBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        if (selector) {
+            [_rightBarButton addTarget:self action:selector forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+    
+    float leight = 0;
+    
+    if (icon) {
+        [_rightBarButton setTitle:title forState:UIControlStateNormal];
+        [_rightBarButton setTitle:title forState:UIControlStateHighlighted];
+        [_rightBarButton setImage:icon forState:UIControlStateNormal];
+        [_rightBarButton setImage:icon forState:UIControlStateHighlighted];
+        leight = icon.size.width;
+    } else if (title.length > 0) {
+        [_rightBarButton setImage:nil forState:UIControlStateNormal];
+        [_rightBarButton setImage:nil forState:UIControlStateHighlighted];
+        [_rightBarButton setTitle:title forState:UIControlStateNormal];
+        [_rightBarButton setTitle:title forState:UIControlStateHighlighted];
+        CGSize titleSize = [title ex_sizeWithFont:_rightBarButton.titleLabel.font constrainedToSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, MAXFLOAT)];
+        leight = titleSize.width;
+        _rightBarButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    }
+    
+    [_rightBarButton setFrame:CGRectMake(0, 0, leight, 30)];
+    item = [[UIBarButtonItem alloc] initWithCustomView:_rightBarButton];
+    return item;
+}
+
+//编辑图片工具条
+- (HXEditPhotoToolBar *)toolBar {
+    if (!_toolBar) {
+        _toolBar = [HXEditPhotoToolBar instanceView];
+        _toolBar.frame = CGRectMake(0, CONTENT_HEIGHT - 45, self.view.frame.size.width, 45);
+        [_toolBar setSelectPictureCount:0 delegate:self];
+    }
+    return _toolBar;
 }
 
 - (void)didReceiveMemoryWarning {

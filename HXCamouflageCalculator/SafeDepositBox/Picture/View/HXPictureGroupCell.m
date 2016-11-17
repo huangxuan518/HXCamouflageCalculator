@@ -23,7 +23,12 @@
         NSInteger groupPhotoCount = pictureGroupEntity.count;
         NSData *logoData = pictureGroupEntity.logoData;
         
-        _icoImageView.image = [UIImage imageWithData:logoData];
+        if (logoData) {
+            _icoImageView.image = [UIImage imageWithData:logoData];
+        } else {
+            _icoImageView.image = [UIImage imageNamed:@"defaule"];
+        }
+    
         _titleLabel.text = groupName;
         _countLabel.text = [NSString stringWithFormat:@"%ld photos",(long)groupPhotoCount];
     }
