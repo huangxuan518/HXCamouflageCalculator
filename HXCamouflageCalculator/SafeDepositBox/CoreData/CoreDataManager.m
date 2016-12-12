@@ -105,22 +105,23 @@
     
     NSManagedObjectContext *context = self.managedObjectContext;
     
-    NSInteger groupId = 0;
+    __block NSInteger groupId = 0;
     
-    for (PictureEntity *pictureEntity in pictureAry) {
+    [pictureAry enumerateObjectsUsingBlock:^(PictureEntity *pictureEntity, NSUInteger idx, BOOL * _Nonnull stop) {
         Picture *picture = [NSEntityDescription insertNewObjectForEntityForName:kPictureTableName inManagedObjectContext:context];
-//        //为了使图片分类ID不重复，我们采取当前时间戳作为ID进行存储
-//        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"YYYYMMddHHmmss"];
-//        NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
-    
+        //为了使图片分类ID不重复，我们采取当前时间戳作为ID进行存储
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"YYYYMMddHHmmss"];
+        NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+        NSString *pictureId = [NSString stringWithFormat:@"%@%lu",dateString,(unsigned long)idx];
+        picture.pictureId = pictureId.integerValue;
         picture.data = pictureEntity.data;
         picture.groupId = pictureEntity.groupId;
         picture.name = pictureEntity.name;
         picture.time = pictureEntity.time;
         
         groupId = pictureEntity.groupId;
-    }
+    }];
 
     [self saveContext];
     
@@ -150,6 +151,7 @@
     
     for (Picture *picture in array) {
         PictureEntity *pictureEntity = [PictureEntity new];
+        pictureEntity.pictureId = picture.pictureId;
         pictureEntity.groupId = picture.groupId;
         pictureEntity.data = picture.data;
         pictureEntity.name = picture.name;

@@ -9,6 +9,7 @@
 #import "HXPictureListViewController.h"
 
 #import "HXPhotoAlbumListViewController.h"
+#import "SHPhotoPreviewViewController.h"
 
 #import "HXPhotoCollectionViewCell.h"
 #import "HXNoAlbumsPointsCell.h"
@@ -127,6 +128,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
+    [self gotoPhotoPreviewViewController:indexPath.item];
+    
     [_toolBar setSelectPictureCount:1 delegate:self];
 }
 
@@ -171,6 +174,36 @@
 #pragma mark - Go to
 #pragma mark -
 
+//照片预览界面
+- (void)gotoPhotoPreviewViewController:(NSInteger)index {
+    
+    NSMutableArray *photos = [NSMutableArray new];
+    
+    [self.dataAry enumerateObjectsUsingBlock:^(PictureEntity *picture, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIImage *image = [UIImage imageWithData:picture.data];
+        [photos addObject:image];
+    }];
+    
+    SHPhotoPreviewViewController *vc = [[SHPhotoPreviewViewController alloc] initWithPhotos:photos index:index];
+    vc.superTitle = self.title;
+    __weak __typeof(self)weakSelf = self;
+    vc.deleteCompletion = ^(SHPhotoPreviewViewController *vc, NSArray *photos,id currentDeleteImage) {
+        __strong __typeof(self)self = weakSelf;
+        [self.dataAry enumerateObjectsUsingBlock:^(PictureEntity *picture, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            //删除的可能是一个url或者是一个image所以拿它和model里面的url或者image比较即可
+            NSData *data = UIImagePNGRepresentation(currentDeleteImage);
+            if ([picture.data isEqual:data]) {
+                [self.dataAry removeObjectAtIndex:idx];
+                [self deletePictureWithPictureId:picture.pictureId];
+            }
+        }];
+        
+        [self refreshData];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 //去相册列表
 - (void)gotoPhotoAlbumListViewController {
     HXPhotoAlbumListViewController *vc = [HXPhotoAlbumListViewController new];
@@ -205,6 +238,11 @@
         item = [self ittemRightItemWithIcon:[UIImage imageNamed:@"add_photo"] title:nil selector:@selector(showAddPhotosActionSheet)];
     }
     self.navigationItem.rightBarButtonItem = item;
+}
+
+//删除某个图片
+- (void)deletePictureWithPictureId:(NSInteger)pictureId {
+    [kCoreDataManager deletePictureWithPictureId:pictureId];
 }
 
 - (void)backAction:(UIButton *)sender {

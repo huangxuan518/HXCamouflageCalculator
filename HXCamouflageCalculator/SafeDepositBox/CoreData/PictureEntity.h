@@ -10,6 +10,7 @@
 
 @interface PictureEntity : NSObject
 
+@property (nonatomic) int64_t pictureId;
 @property (nullable, nonatomic, retain) NSData *data;
 @property (nonatomic) int64_t groupId;
 @property (nullable, nonatomic, copy) NSString *name;

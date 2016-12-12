@@ -21,6 +21,7 @@ static NSString *const CoreDataSQLiteName = @"MyCoreData.sqlite";
 
 - (void)insertPictureAry:(NSArray *)pictureAry;
 - (NSArray *)selectAlbumCategoryPictureListWithGroupId:(NSInteger)groupId;
+- (void)deletePictureWithPictureId:(NSInteger)pictureId;//根据pictureId删除指定图片
 
 #pragma mark - PictureGroup表操作 增改删查
 

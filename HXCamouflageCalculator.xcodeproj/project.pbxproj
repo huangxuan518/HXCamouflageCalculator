@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4008BB21DB718CE0017246F /* Picture+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E4008BAB1DB718CE0017246F /* Picture+CoreDataClass.m */; };
-		E4008BB31DB718CE0017246F /* Picture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4008BAD1DB718CE0017246F /* Picture+CoreDataProperties.m */; };
-		E4008BB41DB718CE0017246F /* PictureGroup+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E4008BAF1DB718CE0017246F /* PictureGroup+CoreDataClass.m */; };
-		E4008BB51DB718CE0017246F /* PictureGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4008BB11DB718CE0017246F /* PictureGroup+CoreDataProperties.m */; };
 		E403922A1DBF3FFC0063D541 /* PictureGroupEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E40392291DBF3FFC0063D541 /* PictureGroupEntity.m */; };
 		E403922E1DBF49220063D541 /* PictureEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = E403922D1DBF49220063D541 /* PictureEntity.m */; };
+		E405F5201DFE3E19008DF761 /* AJPhotoTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F5191DFE3E19008DF761 /* AJPhotoTapDetectingImageView.m */; };
+		E405F5211DFE3E19008DF761 /* AJPhotoZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F51B1DFE3E19008DF761 /* AJPhotoZoomingScrollView.m */; };
+		E405F5221DFE3E19008DF761 /* AJTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F51D1DFE3E19008DF761 /* AJTapDetectingView.m */; };
+		E405F5231DFE3E19008DF761 /* SHPhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F51F1DFE3E19008DF761 /* SHPhotoPreviewViewController.m */; };
+		E405F52C1DFE460A008DF761 /* PictureGroup+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F5251DFE460A008DF761 /* PictureGroup+CoreDataClass.m */; };
+		E405F52D1DFE460A008DF761 /* PictureGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F5271DFE460A008DF761 /* PictureGroup+CoreDataProperties.m */; };
+		E405F52E1DFE460A008DF761 /* Picture+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F5291DFE460A008DF761 /* Picture+CoreDataClass.m */; };
+		E405F52F1DFE460A008DF761 /* Picture+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E405F52B1DFE460A008DF761 /* Picture+CoreDataProperties.m */; };
 		E40EC4481DAA21980032506E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40EC4471DAA21980032506E /* main.m */; };
 		E40EC44B1DAA21980032506E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40EC44A1DAA21980032506E /* AppDelegate.m */; };
 		E40EC44E1DAA21980032506E /* HXCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40EC44D1DAA21980032506E /* HXCalculatorViewController.m */; };
@@ -55,21 +59,33 @@
 		E4B32CE81DAE21A400DB17DE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4B32CE61DAE21A400DB17DE /* Model.xcdatamodeld */; };
 		E4B32CEB1DAE26AD00DB17DE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B32CEA1DAE26AD00DB17DE /* CoreData.framework */; };
 		E4B32CEE1DAE288100DB17DE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B32CED1DAE288100DB17DE /* CoreDataManager.m */; };
+		FF20DEBA59D99C2C4CED560A /* libPods-HXCamouflageCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3D5A3BB1AA496C0F5D08C3 /* libPods-HXCamouflageCalculator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E4008BAA1DB718CE0017246F /* Picture+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Picture+CoreDataClass.h"; sourceTree = "<group>"; };
-		E4008BAB1DB718CE0017246F /* Picture+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataClass.m"; sourceTree = "<group>"; };
-		E4008BAC1DB718CE0017246F /* Picture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Picture+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E4008BAD1DB718CE0017246F /* Picture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataProperties.m"; sourceTree = "<group>"; };
-		E4008BAE1DB718CE0017246F /* PictureGroup+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureGroup+CoreDataClass.h"; sourceTree = "<group>"; };
-		E4008BAF1DB718CE0017246F /* PictureGroup+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureGroup+CoreDataClass.m"; sourceTree = "<group>"; };
-		E4008BB01DB718CE0017246F /* PictureGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E4008BB11DB718CE0017246F /* PictureGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
+		177A87128141D1C179D48A0E /* Pods-HXCamouflageCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXCamouflageCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HXCamouflageCalculator/Pods-HXCamouflageCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		936629FAFB217C3CE617C235 /* Pods-HXCamouflageCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HXCamouflageCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-HXCamouflageCalculator/Pods-HXCamouflageCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		BB3D5A3BB1AA496C0F5D08C3 /* libPods-HXCamouflageCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HXCamouflageCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40392281DBF3FFC0063D541 /* PictureGroupEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureGroupEntity.h; sourceTree = "<group>"; };
 		E40392291DBF3FFC0063D541 /* PictureGroupEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureGroupEntity.m; sourceTree = "<group>"; };
 		E403922C1DBF49220063D541 /* PictureEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureEntity.h; sourceTree = "<group>"; };
 		E403922D1DBF49220063D541 /* PictureEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureEntity.m; sourceTree = "<group>"; };
+		E405F5181DFE3E19008DF761 /* AJPhotoTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoTapDetectingImageView.h; sourceTree = "<group>"; };
+		E405F5191DFE3E19008DF761 /* AJPhotoTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoTapDetectingImageView.m; sourceTree = "<group>"; };
+		E405F51A1DFE3E19008DF761 /* AJPhotoZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJPhotoZoomingScrollView.h; sourceTree = "<group>"; };
+		E405F51B1DFE3E19008DF761 /* AJPhotoZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJPhotoZoomingScrollView.m; sourceTree = "<group>"; };
+		E405F51C1DFE3E19008DF761 /* AJTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTapDetectingView.h; sourceTree = "<group>"; };
+		E405F51D1DFE3E19008DF761 /* AJTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTapDetectingView.m; sourceTree = "<group>"; };
+		E405F51E1DFE3E19008DF761 /* SHPhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHPhotoPreviewViewController.h; sourceTree = "<group>"; };
+		E405F51F1DFE3E19008DF761 /* SHPhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHPhotoPreviewViewController.m; sourceTree = "<group>"; };
+		E405F5241DFE460A008DF761 /* PictureGroup+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureGroup+CoreDataClass.h"; sourceTree = "<group>"; };
+		E405F5251DFE460A008DF761 /* PictureGroup+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureGroup+CoreDataClass.m"; sourceTree = "<group>"; };
+		E405F5261DFE460A008DF761 /* PictureGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PictureGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E405F5271DFE460A008DF761 /* PictureGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PictureGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E405F5281DFE460A008DF761 /* Picture+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Picture+CoreDataClass.h"; sourceTree = "<group>"; };
+		E405F5291DFE460A008DF761 /* Picture+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataClass.m"; sourceTree = "<group>"; };
+		E405F52A1DFE460A008DF761 /* Picture+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Picture+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E405F52B1DFE460A008DF761 /* Picture+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Picture+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E40EC4431DAA21980032506E /* HXCamouflageCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HXCamouflageCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40EC4471DAA21980032506E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E40EC4491DAA21980032506E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,12 +169,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B32CEB1DAE26AD00DB17DE /* CoreData.framework in Frameworks */,
+				FF20DEBA59D99C2C4CED560A /* libPods-HXCamouflageCalculator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D68B02C4CB47CC51084CB0C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				177A87128141D1C179D48A0E /* Pods-HXCamouflageCalculator.debug.xcconfig */,
+				936629FAFB217C3CE617C235 /* Pods-HXCamouflageCalculator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E405F5161DFE3E19008DF761 /* 图片预览 */ = {
+			isa = PBXGroup;
+			children = (
+				E405F5171DFE3E19008DF761 /* AJPhotoBrowser */,
+				E405F51E1DFE3E19008DF761 /* SHPhotoPreviewViewController.h */,
+				E405F51F1DFE3E19008DF761 /* SHPhotoPreviewViewController.m */,
+			);
+			name = "图片预览";
+			path = PhotoPreview;
+			sourceTree = "<group>";
+		};
+		E405F5171DFE3E19008DF761 /* AJPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				E405F5181DFE3E19008DF761 /* AJPhotoTapDetectingImageView.h */,
+				E405F5191DFE3E19008DF761 /* AJPhotoTapDetectingImageView.m */,
+				E405F51A1DFE3E19008DF761 /* AJPhotoZoomingScrollView.h */,
+				E405F51B1DFE3E19008DF761 /* AJPhotoZoomingScrollView.m */,
+				E405F51C1DFE3E19008DF761 /* AJTapDetectingView.h */,
+				E405F51D1DFE3E19008DF761 /* AJTapDetectingView.m */,
+			);
+			path = AJPhotoBrowser;
+			sourceTree = "<group>";
+		};
 		E40EC43A1DAA21980032506E = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +217,7 @@
 				E40EC4451DAA21980032506E /* HXCamouflageCalculator */,
 				E40EC4441DAA21980032506E /* Products */,
 				E4B32CE91DAE26AD00DB17DE /* Frameworks */,
+				D68B02C4CB47CC51084CB0C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +296,7 @@
 			children = (
 				E4509B831DAF27F300B57E92 /* HXPictureGroupListViewController.h */,
 				E4509B841DAF27F300B57E92 /* HXPictureGroupListViewController.m */,
+				E405F5161DFE3E19008DF761 /* 图片预览 */,
 				E4861F8E1DDC2DB700C09BED /* 添加/编辑分类 */,
 				E4861F9A1DDC2DB700C09BED /* 添加照片 */,
 				E4861FA41DDC2DB700C09BED /* 图片列表 */,
@@ -408,14 +460,14 @@
 		E4B32CE51DAE209000DB17DE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				E4008BAA1DB718CE0017246F /* Picture+CoreDataClass.h */,
-				E4008BAB1DB718CE0017246F /* Picture+CoreDataClass.m */,
-				E4008BAC1DB718CE0017246F /* Picture+CoreDataProperties.h */,
-				E4008BAD1DB718CE0017246F /* Picture+CoreDataProperties.m */,
-				E4008BAE1DB718CE0017246F /* PictureGroup+CoreDataClass.h */,
-				E4008BAF1DB718CE0017246F /* PictureGroup+CoreDataClass.m */,
-				E4008BB01DB718CE0017246F /* PictureGroup+CoreDataProperties.h */,
-				E4008BB11DB718CE0017246F /* PictureGroup+CoreDataProperties.m */,
+				E405F5241DFE460A008DF761 /* PictureGroup+CoreDataClass.h */,
+				E405F5251DFE460A008DF761 /* PictureGroup+CoreDataClass.m */,
+				E405F5261DFE460A008DF761 /* PictureGroup+CoreDataProperties.h */,
+				E405F5271DFE460A008DF761 /* PictureGroup+CoreDataProperties.m */,
+				E405F5281DFE460A008DF761 /* Picture+CoreDataClass.h */,
+				E405F5291DFE460A008DF761 /* Picture+CoreDataClass.m */,
+				E405F52A1DFE460A008DF761 /* Picture+CoreDataProperties.h */,
+				E405F52B1DFE460A008DF761 /* Picture+CoreDataProperties.m */,
 				E40392281DBF3FFC0063D541 /* PictureGroupEntity.h */,
 				E40392291DBF3FFC0063D541 /* PictureGroupEntity.m */,
 				E403922C1DBF49220063D541 /* PictureEntity.h */,
@@ -431,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B32CEA1DAE26AD00DB17DE /* CoreData.framework */,
+				BB3D5A3BB1AA496C0F5D08C3 /* libPods-HXCamouflageCalculator.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -442,9 +495,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E40EC45A1DAA21980032506E /* Build configuration list for PBXNativeTarget "HXCamouflageCalculator" */;
 			buildPhases = (
+				CF82DC012B5C0D9AA1D5742D /* [CP] Check Pods Manifest.lock */,
 				E40EC43F1DAA21980032506E /* Sources */,
 				E40EC4401DAA21980032506E /* Frameworks */,
 				E40EC4411DAA21980032506E /* Resources */,
+				E2775A1A1133F20BAF2AB594 /* [CP] Embed Pods Frameworks */,
+				946410AE5A781747514E291F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -508,11 +564,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		946410AE5A781747514E291F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HXCamouflageCalculator/Pods-HXCamouflageCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF82DC012B5C0D9AA1D5742D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2775A1A1133F20BAF2AB594 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HXCamouflageCalculator/Pods-HXCamouflageCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E40EC43F1DAA21980032506E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E405F52D1DFE460A008DF761 /* PictureGroup+CoreDataProperties.m in Sources */,
 				E4B32CE81DAE21A400DB17DE /* Model.xcdatamodeld in Sources */,
 				E4861FD81DDC2EA000C09BED /* HXSelectPhotoCountView.m in Sources */,
 				E47D131B1DB4676200BA1040 /* BaseTableViewController.mm in Sources */,
@@ -521,10 +626,8 @@
 				E42AE8611DAB62CB00EB29C3 /* HXCalculatorKeyboardView.m in Sources */,
 				E47D13191DB4676200BA1040 /* BaseTabBarController.mm in Sources */,
 				E40EC44E1DAA21980032506E /* HXCalculatorViewController.m in Sources */,
-				E4008BB21DB718CE0017246F /* Picture+CoreDataClass.m in Sources */,
+				E405F52E1DFE460A008DF761 /* Picture+CoreDataClass.m in Sources */,
 				E4861FD31DDC2EA000C09BED /* HXNoAlbumsPointsView.m in Sources */,
-				E4008BB31DB718CE0017246F /* Picture+CoreDataProperties.m in Sources */,
-				E4008BB41DB718CE0017246F /* PictureGroup+CoreDataClass.m in Sources */,
 				E4861FD41DDC2EA000C09BED /* HXPhotoCollectionViewCell.m in Sources */,
 				E4861FB31DDC2DB700C09BED /* HXPictureListViewController.m in Sources */,
 				E47D13201DB4676200BA1040 /* AssetHelper.m in Sources */,
@@ -532,13 +635,16 @@
 				E47D131F1DB4676200BA1040 /* UIView+Helpers.m in Sources */,
 				E4861FE11DDD483700C09BED /* HXEditPhotoToolBar.m in Sources */,
 				E47D13171DB4676200BA1040 /* BaseCollectionViewController.mm in Sources */,
+				E405F52C1DFE460A008DF761 /* PictureGroup+CoreDataClass.m in Sources */,
 				E4861FD11DDC2EA000C09BED /* HXNoAlbumsPointsCell.m in Sources */,
+				E405F52F1DFE460A008DF761 /* Picture+CoreDataProperties.m in Sources */,
 				E47D131D1DB4676200BA1040 /* NSString+Extension.m in Sources */,
+				E405F5221DFE3E19008DF761 /* AJTapDetectingView.m in Sources */,
 				E47D131C1DB4676200BA1040 /* BaseViewController.mm in Sources */,
+				E405F5201DFE3E19008DF761 /* AJPhotoTapDetectingImageView.m in Sources */,
 				E4509B881DAF27F300B57E92 /* HXPictureGroupListViewController.m in Sources */,
 				E47D131E1DB4676200BA1040 /* UIImage+Extension.m in Sources */,
 				E47D131A1DB4676200BA1040 /* BaseTableViewCell.m in Sources */,
-				E4008BB51DB718CE0017246F /* PictureGroup+CoreDataProperties.m in Sources */,
 				E4861FA71DDC2DB700C09BED /* HXAddAlbumCategoryViewController.m in Sources */,
 				E47D13181DB4676200BA1040 /* BaseNavigationController.m in Sources */,
 				E4861FD61DDC2EA000C09BED /* HXPictureGroupCell.m in Sources */,
@@ -550,7 +656,9 @@
 				E4861FCB1DDC2EA000C09BED /* HXAlbumCoverImageCell.m in Sources */,
 				E4B32CEE1DAE288100DB17DE /* CoreDataManager.m in Sources */,
 				E40EC44B1DAA21980032506E /* AppDelegate.m in Sources */,
+				E405F5231DFE3E19008DF761 /* SHPhotoPreviewViewController.m in Sources */,
 				E40EC4481DAA21980032506E /* main.m in Sources */,
+				E405F5211DFE3E19008DF761 /* AJPhotoZoomingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +755,7 @@
 		};
 		E40EC45B1DAA21980032506E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 177A87128141D1C179D48A0E /* Pods-HXCamouflageCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -664,6 +773,7 @@
 		};
 		E40EC45C1DAA21980032506E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 936629FAFB217C3CE617C235 /* Pods-HXCamouflageCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
